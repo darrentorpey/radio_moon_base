@@ -13,6 +13,8 @@
   <script type="text/javascript" src="lib/core/object.js"></script>
   <script type="text/javascript" src="lib/actors/basic_box.js"></script>
   <script type="text/javascript" src="lib/mouse.js"></script>
+  <script type="text/javascript" src="lib/darrens_helpers.js"></script>
+  <script type="text/javascript" src="parts/background.js"></script>
 
   <link rel="stylesheet" href="resources/style.css">
   <style>BODY { -webkit-user-select: none; margin: 0px }</style>
@@ -54,6 +56,8 @@ function setup() {
   maingame.gameIntroAnimation = function() { return true; };
   maingame.gameTitleIntroAnimation = introScreenAnimation;
   maingame.initializeGame = function() {
+    addBackground();
+
     addMouseControl();
 
     addPlayer();
@@ -112,40 +116,6 @@ function introScreenAnimation(reset) {
   // });
 };
 
-function loadMap() {
-  return help.asciiArtToMap([
-"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
-"x                  xx                  x",
-"x                  xx                  x",
-"xxxxxxxx      x    xx                  x",
-"x             x    xxxxxxxxxx          x",
-"x             x                        x",
-"x             x                        x",
-"x     xxxx  xxxxxxxxx           xxxxxxxx",
-"x                  xx                  x",
-"x                  xx                  x",
-"xxxx               xx                  x",
-"x      xxxxxxxxx   xx                  x",
-"x                  xx                  x",
-"x                  xx        x         x",
-"xxxxxxx  xxxxxxxxxxxx        x         x",
-"xxxxxxx  xxxxxxxxxxxx        x         x",
-"x                  xx      xxxx        x",
-"x                  xx        x         x",
-"xxxxxxxx      x    xx        x         x",
-"x             x    xx                  x",
-"x             x    xx                  x",
-"x             x    xx                  x",
-"x     xxxx  xxxxxxxxx                  x",
-"x                  xx                  x",
-"xxxx                                   x",
-"x                                      x",
-"x      xxxxxxxxx   xx                  x",
-"x                  xx                  x",
-"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
-    ], [ [null, ' '], [0, 'x'] ])
-}
-
 function gameOverWin() {
   //maingame.setState(801);
 }
@@ -194,6 +164,7 @@ function addPlayer() {
       // Set the starting animation for the player object.
       this.animIndex = 'still';
     },
+
     first: function() {
       toys.topview.controlKeys(this, { left: 'left', right: 'right', up: 'up', down: 'down' });
 
@@ -219,8 +190,6 @@ function addPlayer() {
     },
 
     blit: function() {
-      gbox.blitFade(gbox.getBufferContext(), { alpha: 1 });
-
       gbox.blitTile(gbox.getBufferContext(), {
         tileset: this.tileset,
         tile:    this.frame,
