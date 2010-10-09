@@ -1,0 +1,23 @@
+<!-- An audio element with controls -->
+<audio id="input" src="test-tone.ogg" controls></audio>
+
+<!-- A display element for printing values -->
+<div id="display"></div>
+
+<script type="text/javascript">
+
+  // Get the audio input object
+  var input = document.getElementById( 'input' );
+
+  // Get the display div object
+  var display = document.getElementById( 'display' );
+          
+  // Add an event listener to the audio input object
+  input.addEventListener( 'MozAudioAvailable', function( e ){
+
+    // Display the first sample of each buffer
+    display.innerHTML += e.frameBuffer[ 0 ] + ', ';
+    
+  }, false );
+
+</script>

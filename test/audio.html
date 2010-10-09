@@ -1,0 +1,17 @@
+<script type="text/javascript">
+  // Create an Audio interface
+  var output = new Audio();
+
+  // Set up a mono channel at 44.1Khz
+  output.mozSetup( 1, 44100 );  
+
+  // Create a sample buffer array
+  var samples = new Float32Array( 22050 );
+
+  // Fill the sample buffer array with values
+  for(var i=0, l=samples.length; i< l; i++){
+    samples[i] = Math.sin( i / 20 );
+  }
+</script>
+
+<button onclick="output.mozWriteAudio(samples);">Play</button>
