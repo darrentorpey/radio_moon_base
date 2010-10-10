@@ -1,12 +1,14 @@
 {
   addImage: [
-    ['font',            'resources/font.png'],
-    ['logo',            'resources/logo.png'],
-    ['player_sprite',   'resources/player_sprite.png'],
-    ['map_spritesheet', 'resources/map_pieces.png'],
-    ['enemy_sprite',    'resources/enemy_sprite.png'],
-    ['player_bullet',   'resources/bullet.png'],
-    ['sprites',         'resources/explode.png']
+    ['font',             'resources/font.png'],
+    ['logo',             'resources/logo.png'],
+    ['player_sprite',    'resources/player_sprite.png'],
+    ['map_spritesheet',  'resources/map_pieces.png'],
+    ['enemy_sprite',     'resources/enemy_sprite.png'],
+    ['player_bullet',    'resources/bullet.png'],
+    ['sprites',          'resources/explode.png'],
+    ['stars_background', 'resources/background_and_hud.png'],
+    ['moon_hold',        'resources/moon_hold.png']
   ],
 
   addFont: [
@@ -58,10 +60,40 @@
       tilerow:  2,
       gapx:     0,
       gapy:     0
+    },
+    {
+      id:      'moon_hold',
+      image:   'moon_hold',
+      tileh:   100,
+      tilew:   100,
+      tilerow: 4,
+      gapx:    0,
+      gapy:    0
+    },
+    {
+      id:      'stars_background',
+      image:   'stars_background',
+      tilew:   1024,
+      tileh:   768,
+      tilerow: 1,
+      gapx:    0,
+      gapy:    0
+    },
+    {
+      id:      'stars_t',
+      image:   'stars',
+      tilew:   147,
+      tileh:   112,
+      tilerow: 1,
+      gapx:    0,
+      gapy:    0
     }
   ],
 
   addAudio: [
-    ['explosion', ['resources/test-tone.ogg'], { channel: 'bgmusic', loop: false }]
+    ['explosion', ['resources/test-tone.ogg'],     { channel: 'bgmusic', loop: false }],
+    ['moon_music_1', ['resources/music/synth_line.ogg'], { channel: 'moon_music_1', loop: true }],
+    ['moon_music_drum_1', ['resources/music/Drums.ogg'], { channel: 'moon_music_drum_1', loop: true }],
+    ['moon_music_pad_1', ['resources/music/Pad_1.ogg'], { channel: 'moon_music_pad_1', loop: true }]
   ]
 }

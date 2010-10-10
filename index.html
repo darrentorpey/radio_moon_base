@@ -12,31 +12,30 @@
   <script type="text/javascript" src="lib/screen.js"></script>
   <script type="text/javascript" src="lib/core/object.js"></script>
   <script type="text/javascript" src="lib/actors/basic_box.js"></script>
+  <script type="text/javascript" src="lib/actors/celestial_body.js"></script>
   <script type="text/javascript" src="lib/mouse.js"></script>
   <script type="text/javascript" src="lib/planet.js"></script>
-
+  <script type="text/javascript" src="lib/darrens_helpers.js"></script>
+  <script type="text/javascript" src="lib/gbox_ext.js"></script>
+  <script type="text/javascript" src="lib/sound.js"></script>
+  <script type="text/javascript" src="parts/background.js"></script>
+  
   <link rel="stylesheet" href="resources/style.css">
   <style>BODY { -webkit-user-select: none; margin: 0px }</style>
   <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
   <script>
 var maingame;
-var map;
-// This keeps track of how many frames have been rendered in total
 var frameCount = 0;
-var TIME_LIMIT = 10; // This will determine how many seconds the player must survive to win
 var timeStarted;     // This will record the current time when the game started
-var pathMap;
-var mx, my;
 
 window.addEventListener('load', loadResources, false);
 
 function loadResources() {
-  // We're passing some overrides to help.akihabaraInit to set our title, resolution, and zoom factor
   help.akihabaraInit({
-    title: '8by5',
-    width: 640,
+    title:  '8by5',
+    width:  640,
     height: 480,
-    zoom: 1
+    zoom:   1
   });
 
   gbox.addBundle({ file: 'resources/bundle.js' });
@@ -45,6 +44,8 @@ function loadResources() {
 
   gbox.loadAll(setup);
 };
+
+var one; var two; var three;
 
 function setup() {
   gbox.setGroups(['mouse', 'background', 'bullets', 'player', 'boxes', 'enemy', 'game']);
@@ -55,17 +56,14 @@ function setup() {
   maingame.gameIntroAnimation = function() { return true; };
   maingame.gameTitleIntroAnimation = introScreenAnimation;
   maingame.initializeGame = function() {
+    addBackground();
+
     addMouseControl();
 
     addPlayer();
 
-    // This gives us the time at which the game started,
-    //  in milliseconds since the epoch
     timeStarted = (new Date()).getTime();
 
-    // This adds a "label" widget, with "small"-font text to the screen
-    //  located 25 pixels down from the top of the screen and
-    //  40 pixels back from the right side of the screen
     maingame.hud.setWidget('time_left', {
       widget: 'label',
       font:   'small',
@@ -84,8 +82,16 @@ function setup() {
       clear:  true
     });
 
-    new BasicBox({ x: 60, y: 60, height: 50, width: 50 });
+    // new BasicBox({ x: 350, y: 40, height: 100, width: 100, color: 'rgb(100, 200, 200)' });
+    one = create_celestial_body({
+      x: 50, y: 150, sound: 'moon_music_1'
+    });
 
+    two = create_celestial_body({
+      x: 200, y: 150, sound: 'moon_music_drum_1'
+    });
+
+<<<<<<< HEAD
     new BasicBox({ x: 150, y: 150, height: 50, width: 50, color: 'rgb(0, 100, 200)' });
     new BasicBox({ x: 150, y: 250, height: 75, width: 75, color: 'rgb(100, 100, 200)' });
     new BasicBox({ x: 350, y: 40, height: 100, width: 100, color: 'rgb(100, 200, 200)' });
@@ -98,6 +104,11 @@ function setup() {
 	planetFactory.createPlanet('planet-1',70,5,'fullVolume');
 	
 	planetFactory.createPlanet('planet-0-planet-0',20,6,'lowerHalfVolume');
+=======
+    three = create_celestial_body({
+      x: 350, y: 150, sound: 'moon_music_pad_1'
+    });
+>>>>>>> 9c329a491361dc6d1f6234fcbffe382daf2dde22
   };
 
   gbox.go();
@@ -121,54 +132,6 @@ function introScreenAnimation(reset) {
   //   speed: 1
   // });
 };
-
-function loadMap() {
-  return help.asciiArtToMap([
-"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
-"x                  xx                  x",
-"x                  xx                  x",
-"xxxxxxxx      x    xx                  x",
-"x             x    xxxxxxxxxx          x",
-"x             x                        x",
-"x             x                        x",
-"x     xxxx  xxxxxxxxx           xxxxxxxx",
-"x                  xx                  x",
-"x                  xx                  x",
-"xxxx               xx                  x",
-"x      xxxxxxxxx   xx                  x",
-"x                  xx                  x",
-"x                  xx        x         x",
-"xxxxxxx  xxxxxxxxxxxx        x         x",
-"xxxxxxx  xxxxxxxxxxxx        x         x",
-"x                  xx      xxxx        x",
-"x                  xx        x         x",
-"xxxxxxxx      x    xx        x         x",
-"x             x    xx                  x",
-"x             x    xx                  x",
-"x             x    xx                  x",
-"x     xxxx  xxxxxxxxx                  x",
-"x                  xx                  x",
-"xxxx                                   x",
-"x                                      x",
-"x      xxxxxxxxx   xx                  x",
-"x                  xx                  x",
-"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
-    ], [ [null, ' '], [0, 'x'] ])
-}
-
-function gameOverWin() {
-  //maingame.setState(801);
-}
-
-function callWhenColliding(obj,group,call) {
-  for (var i in gbox._objects[group])
-    if ((!gbox._objects[group][i].initialize) && toys.topview.collides(obj, gbox._objects[group][i]))
-      if (gbox._objects[group][i][call]) {
-        gbox._objects[group][i][call](obj);
-        return i;
-      }
-  return false;
-}
 
 // This is our function for adding the player object -- this keeps our main game code nice and clean
 function addPlayer() {
@@ -204,6 +167,7 @@ function addPlayer() {
       // Set the starting animation for the player object.
       this.animIndex = 'still';
     },
+
     first: function() {
       toys.topview.controlKeys(this, { left: 'left', right: 'right', up: 'up', down: 'down' });
 
@@ -224,13 +188,9 @@ function addPlayer() {
 
       toys.topview.handleAccellerations(this);
       toys.topview.applyForces(this);
-
-      callWhenColliding(this, 'enemy', 'gameOverFail');
     },
 
     blit: function() {
-      gbox.blitFade(gbox.getBufferContext(), { alpha: 1 });
-
       gbox.blitTile(gbox.getBufferContext(), {
         tileset: this.tileset,
         tile:    this.frame,
@@ -244,6 +204,5 @@ function addPlayer() {
     },
   });
 }
-
 </script>
 </head><body></body></html>
