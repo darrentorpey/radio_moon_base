@@ -13,6 +13,7 @@
   <script type="text/javascript" src="lib/core/object.js"></script>
   <script type="text/javascript" src="lib/actors/basic_box.js"></script>
   <script type="text/javascript" src="lib/mouse.js"></script>
+  <script type="text/javascript" src="lib/planet.js"></script>
 
   <link rel="stylesheet" href="resources/style.css">
   <style>BODY { -webkit-user-select: none; margin: 0px }</style>
@@ -88,6 +89,15 @@ function setup() {
     new BasicBox({ x: 150, y: 150, height: 50, width: 50, color: 'rgb(0, 100, 200)' });
     new BasicBox({ x: 150, y: 250, height: 75, width: 75, color: 'rgb(100, 100, 200)' });
     new BasicBox({ x: 350, y: 40, height: 100, width: 100, color: 'rgb(100, 200, 200)' });
+	
+	planetFactory.createPlanet('null',0,0,'playTrack');
+	planetFactory.createPlanet('null',0,0,'playTrack');
+	planetFactory.createPlanet('planet-0',60,1,'fullVolume');
+	planetFactory.createPlanet('planet-1',30,3,'fullVolume');
+	planetFactory.createPlanet('planet-1',50,2,'fullVolume');
+	planetFactory.createPlanet('planet-1',70,5,'fullVolume');
+	
+	planetFactory.createPlanet('planet-0-planet-0',20,6,'lowerHalfVolume');
   };
 
   gbox.go();
