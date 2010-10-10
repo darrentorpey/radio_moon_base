@@ -13,6 +13,7 @@
   <script type="text/javascript" src="lib/core/object.js"></script>
   <script type="text/javascript" src="lib/actors/basic_box.js"></script>
   <script type="text/javascript" src="lib/actors/celestial_body.js"></script>
+  <script type="text/javascript" src="lib/actors/moon.js"></script>
   <script type="text/javascript" src="lib/mouse.js"></script>
   <script type="text/javascript" src="lib/planet.js"></script>
   <script type="text/javascript" src="lib/darrens_helpers.js"></script>
@@ -59,6 +60,8 @@ function setup() {
     addBackground();
 
     addMouseControl();
+
+    // addMoon();
 
     timeStarted = (new Date()).getTime();
 
@@ -135,10 +138,10 @@ function setup() {
 
     planetFactory.createPlanet('null',              0,  0, 'playTrack');
     planetFactory.createPlanet('null',              0,  0, 'playTrack');
-    planetFactory.createPlanet('planet-0',          60, 1, 'fullVolume');
-    planetFactory.createPlanet('planet-1',          30, 3, 'fullVolume');
-    planetFactory.createPlanet('planet-1',          50, 2, 'fullVolume');
-    planetFactory.createPlanet('planet-1',          70, 5, 'fullVolume');
+    planetFactory.createPlanet('planet-0',          120, 1, 'fullVolume');
+    planetFactory.createPlanet('planet-1',          80, 3, 'fullVolume');
+    planetFactory.createPlanet('planet-1',          100, 2, 'fullVolume');
+    planetFactory.createPlanet('planet-1',          120, 5, 'fullVolume');
     planetFactory.createPlanet('planet-0-planet-0', 20, 6, 'lowerHalfVolume');
   };
 
