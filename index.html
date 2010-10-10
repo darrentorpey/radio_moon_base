@@ -19,6 +19,7 @@
   <script type="text/javascript" src="lib/gbox_ext.js"></script>
   <script type="text/javascript" src="lib/sound.js"></script>
   <script type="text/javascript" src="parts/background.js"></script>
+  <script type="text/javascript" src="parts/screens.js"></script>
 
   <link rel="stylesheet" href="resources/style.css">
   <style>BODY { -webkit-user-select: none; margin: 0px }</style>
@@ -46,13 +47,20 @@ function loadResources() {
 };
 
 function setup() {
-  gbox.setGroups(['mouse', 'background', 'bullets', 'player', 'planets', 'boxes', 'enemy', 'game']);
+  gbox.setGroups(['mouse', 'background', 'bullets', 'player', 'planets', 'boxes', 'enemy', 'game', 'title_screen']);
 
   maingame = gamecycle.createMaingame('game', 'game');
 
   maingame.gameMenu = function() { return true; };
   maingame.gameIntroAnimation = function() { return true; };
-  maingame.gameTitleIntroAnimation = introScreenAnimation;
+  // maingame.gameTitleIntroAnimation = introScreenAnimation;
+  maingame.gameTitleIntroAnimation = function() {}
+  maingame.changeLevel = function() {
+    // gbox.clearGroup('game');
+  }
+  // maingame.endlevelIntroAnimation = function() {
+  //   console.log("enddd");
+  // }
   maingame.initializeGame = function() {
     addBackground();
 
@@ -61,7 +69,7 @@ function setup() {
     timeStarted = (new Date()).getTime();
 
     planetFactory.createPlanet({
-      x: 100, y: 100,
+      x: 140, y: 140,
       parentId: 'null',
       radius:   100,
       speed:    100,
@@ -94,6 +102,24 @@ function setup() {
       speed:    0,
       effect:   'playTrack',
       sound:    'moon_music_pad_3'
+    });
+
+    planetFactory.createPlanet({
+      x: 10, y: 10,
+      parentId: 'null',
+      radius:   0,
+      speed:    0,
+      effect:   'playTrack',
+      sound:    'echoes'
+    });
+
+    planetFactory.createPlanet({
+      x: 250, y: 250,
+      parentId: 'null',
+      radius:   0,
+      speed:    0,
+      effect:   'playTrack',
+      sound:    'starrysounds'
     });
 
     planetFactory.createPlanet({
@@ -162,7 +188,7 @@ function setup() {
   gbox.go();
 }
 
-function introScreenAnimation(reset) {
+// function introScreenAnimation(reset) {
   // var introScreen = new IntroScreen();
   // introScreen.run();
   // if (reset) {
@@ -179,6 +205,6 @@ function introScreenAnimation(reset) {
   //   y:     20,
   //   speed: 1
   // });
-};
+// };
 </script>
 </head><body></body></html>

@@ -19,11 +19,18 @@
     ['planet_4_glow',    'resources/planets/planet4_select.png'],
     ['planet_5',         'resources/planets/planet5.png'],
     ['planet_5_glow',    'resources/planets/planet5_select.png'],
+    ['planet_6',         'resources/planets/planet6.png'],
+    ['planet_6_glow',    'resources/planets/planet6_select.png'],
+    ['planet_7',         'resources/planets/planet7.png'],
+    ['planet_7_glow',    'resources/planets/planet7_select.png'],
+    ['planet_8',         'resources/planets/planet8.png'],
+    ['planet_8_glow',    'resources/planets/planet8_select.png'],
     ['moon_1',           'resources/moons/moon1.png'],
     ['moon_2',           'resources/moons/moon2.png'],
     ['moon_3',           'resources/moons/moon3.png'],
     ['moon_4',           'resources/moons/moon4.png'],
-    ['moon_5',           'resources/moons/moon5.png']
+    ['moon_5',           'resources/moons/moon5.png'],
+    ['title_screen',     'resources/title.png']
   ],
 
   addFont: [
@@ -136,6 +143,36 @@
       tilerow: 1, gapx: 0, gapy: 0
     },
     {
+      id: 'planet_6', image: 'planet_6',
+      tilew: 140, tileh: 140,
+      tilerow: 1, gapx: 0, gapy: 0
+    },
+    {
+      id: 'planet_6_glow', image: 'planet_6_glow',
+      tilew: 140, tileh: 140,
+      tilerow: 1, gapx: 0, gapy: 0
+    },
+    {
+      id: 'planet_7', image: 'planet_7',
+      tilew: 140, tileh: 140,
+      tilerow: 1, gapx: 0, gapy: 0
+    },
+    {
+      id: 'planet_7_glow', image: 'planet_7_glow',
+      tilew: 140, tileh: 140,
+      tilerow: 1, gapx: 0, gapy: 0
+    },
+    {
+      id: 'planet_8_glow', image: 'planet_8_glow',
+      tilew: 160, tileh: 160,
+      tilerow: 1, gapx: 0, gapy: 0
+    },
+    {
+      id: 'planet_8_glow', image: 'planet_8_glow',
+      tilew: 160, tileh: 160,
+      tilerow: 1, gapx: 0, gapy: 0
+    },
+    {
       id:      'stars_background',
       image:   'stars_background',
       tilew:   1024,
@@ -177,6 +214,11 @@
       id: 'moon_5', image: 'moon_5',
       tilew: 30, tileh: 30,
       tilerow: 1, gapx: 0, gapy: 0
+    },
+    {
+      id: 'title_screen', image: 'title_screen',
+      tilew: 1024, tileh: 768,
+      tilerow: 1, gapx: 0, gapy: 0
     }
   ],
 
@@ -191,6 +233,8 @@
     ['moon_music_pad_2',        ['resources/music/Pad_2.ogg'],        { channel: 'bgmusic', loop: true }],
     ['moon_music_pad_3',        ['resources/music/Pad_3.ogg'],        { channel: 'bgmusic', loop: true }],
     ['moon_music_bells_1',      ['resources/music/Bells_1.ogg'],      { channel: 'bgmusic', loop: true }],
+    ['echoes',            ['resources/loops/loop_echoes.ogg'],      { channel: 'bgmusic', loop: true }],
+    ['starrysounds',            ['resources/loops/loop_starrysounds.ogg'],      { channel: 'bgmusic', loop: true }],
     ['moon_music_bells_2',      ['resources/music/Bells_2.ogg'],      { channel: 'bgmusic', loop: true }]
   ]
 }
