@@ -7,7 +7,7 @@
     ['enemy_sprite',     'resources/enemy_sprite.png'],
     ['player_bullet',    'resources/bullet.png'],
     ['sprites',          'resources/explode.png'],
-    ['stars_background', 'resources/star_background.png'],
+    ['stars_background', 'resources/background_and_hud.png'],
     ['moon_hold',        'resources/moon_hold.png']
   ],
 
@@ -92,6 +92,8 @@
 
   addAudio: [
     ['explosion', ['resources/test-tone.ogg'],     { channel: 'bgmusic', loop: false }],
-    ['music1', ['resources/music/synth_line.ogg'], { channel: 'bgmusic', loop: false }]
+    ['moon_music_1', ['resources/music/synth_line.ogg'], { channel: 'moon_music_1', loop: true }],
+    ['moon_music_drum_1', ['resources/music/Drums.ogg'], { channel: 'moon_music_drum_1', loop: true }],
+    ['moon_music_pad_1', ['resources/music/Pad_1.ogg'], { channel: 'moon_music_pad_1', loop: true }]
   ]
 }
