@@ -24,6 +24,8 @@
   <style>BODY { -webkit-user-select: none; margin: 0px }</style>
   <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
   <script>
+var one; var two; var three;
+
 var maingame;
 var frameCount = 0;
 var timeStarted;     // This will record the current time when the game started
@@ -45,10 +47,8 @@ function loadResources() {
   gbox.loadAll(setup);
 };
 
-var one; var two; var three;
-
 function setup() {
-  gbox.setGroups(['mouse', 'background', 'bullets', 'player', 'boxes', 'enemy', 'game']);
+  gbox.setGroups(['mouse', 'background', 'bullets', 'player', 'planets', 'boxes', 'enemy', 'game']);
 
   maingame = gamecycle.createMaingame('game', 'game');
 
@@ -95,13 +95,13 @@ function setup() {
       x: 350, y: 150, sound: 'moon_music_pad_1'
     });
 
-    planetFactory.createPlanet('null',0,0,'playTrack');
-    planetFactory.createPlanet('null',0,0,'playTrack');
-    planetFactory.createPlanet('planet-0',60,1,'fullVolume');
-    planetFactory.createPlanet('planet-1',30,3,'fullVolume');
-    planetFactory.createPlanet('planet-1',50,2,'fullVolume');
-    planetFactory.createPlanet('planet-1',70,5,'fullVolume');
-    planetFactory.createPlanet('planet-0-planet-0',20,6,'lowerHalfVolume');
+    // planetFactory.createPlanet('null',0,0,'playTrack');
+    // planetFactory.createPlanet('null',0,0,'playTrack');
+    // planetFactory.createPlanet('planet-0',60,1,'fullVolume');
+    // planetFactory.createPlanet('planet-1',30,3,'fullVolume');
+    // planetFactory.createPlanet('planet-1',50,2,'fullVolume');
+    // planetFactory.createPlanet('planet-1',70,5,'fullVolume');
+    // planetFactory.createPlanet('planet-0-planet-0',20,6,'lowerHalfVolume');
   };
 
   gbox.go();
