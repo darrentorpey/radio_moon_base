@@ -91,9 +91,14 @@
   ],
 
   addAudio: [
-    ['explosion', ['resources/test-tone.ogg'],     { channel: 'bgmusic', loop: false }],
-    ['moon_music_1', ['resources/music/synth_line.ogg'], { channel: 'moon_music_1', loop: true }],
-    ['moon_music_drum_1', ['resources/music/Drums.ogg'], { channel: 'moon_music_drum_1', loop: true }],
-    ['moon_music_pad_1', ['resources/music/Pad_1.ogg'], { channel: 'moon_music_pad_1', loop: true }]
+    ['explosion',               ['resources/test-tone.ogg'],          { channel: 'bgmusic',                 loop: false }],
+    ['moon_music_1',            ['resources/music/synth_line.ogg'],   { channel: 'moon_music_1',            loop: true }],
+    ['moon_music_drum_1',       ['resources/music/Drums.ogg'],        { channel: 'moon_music_drum_1',       loop: true }],
+    ['moon_music_percussion_1', ['resources/music/Percussion.ogg'],   { channel: 'moon_music_percussion_1', loop: true }],
+    ['moon_music_percussion_2', ['resources/music/Percussion_2.ogg'], { channel: 'moon_music_percussion_2', loop: true }],
+    ['moon_music_synth_1',      ['resources/music/Synth.ogg'],        { channel: 'moon_music_synth_1',      loop: true }],
+    ['moon_music_pad_1',        ['resources/music/Pad_1.ogg'],        { channel: 'moon_music_pad_1',        loop: true }],
+    ['moon_music_bells_1',      ['resources/music/Bells.ogg'],        { channel: 'moon_music_bells_1',      loop: true }],
+    ['moon_music_bells_2',      ['resources/music/Bells_2.ogg'],      { channel: 'moon_music_bells_2',      loop: true }]
   ]
 }
