@@ -98,6 +98,8 @@
     ['moon_music_percussion_2', ['resources/music/Percussion_2.ogg'], { channel: 'moon_music_percussion_2', loop: true }],
     ['moon_music_synth_1',      ['resources/music/Synth.ogg'],        { channel: 'moon_music_synth_1',      loop: true }],
     ['moon_music_pad_1',        ['resources/music/Pad_1.ogg'],        { channel: 'moon_music_pad_1',        loop: true }],
+    ['moon_music_pad_2',        ['resources/music/Pad_2.ogg'],        { channel: 'moon_music_pad_2',        loop: true }],
+    ['moon_music_pad_3',        ['resources/music/Pad_3.ogg'],        { channel: 'moon_music_pad_3',        loop: true }],
     ['moon_music_bells_1',      ['resources/music/Bells.ogg'],        { channel: 'moon_music_bells_1',      loop: true }],
     ['moon_music_bells_2',      ['resources/music/Bells_2.ogg'],      { channel: 'moon_music_bells_2',      loop: true }]
   ]
