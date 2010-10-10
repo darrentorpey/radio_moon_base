@@ -11,9 +11,7 @@ function addBackground() {
         planetFactory.getPrevPlanet();
       } else if (gbox.keyIsHit('right')) {
         planetFactory.getNextPlanet();
-      }
-
-      if (gbox.keyIsHit('down')) {
+      } else if (gbox.keyIsHit('down')) {
         volumeDownCurrent();
       } else if (gbox.keyIsHit('up')) {
         volumeUpCurrent();

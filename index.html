@@ -102,25 +102,27 @@ function setup() {
     });
 
     planetFactory.createPlanet({
-      parentId: 'planet-1',
+      parentId: 'planet-2',
       radius:   100,
       speed:    2,
       effect:   'fullVolume'
     });
 
-    planetFactory.createPlanet({
-      parentId: 'planet-1',
-      radius:   120,
-      speed:    5,
-      effect:   'fullVolume'
-    });
+    // planetFactory.createPlanet({
+    //   parentId: 'planet-1',
+    //   radius:   120,
+    //   speed:    5,
+    //   effect:   'fullVolume'
+    // });
 
-    planetFactory.createPlanet({
-      parentId: 'planet-0-planet-0',
-      radius:   20,
-      speed:    6,
-      effect:   'lowerHalfVolume'
-    });
+    // planetFactory.createPlanet({
+    //   parentId: 'planet-0-planet-0',
+    //   radius:   20,
+    //   speed:    6,
+    //   effect:   'lowerHalfVolume'
+    // });
+
+    planetFactory.getNextPlanet();
 
     playAll();
   };
