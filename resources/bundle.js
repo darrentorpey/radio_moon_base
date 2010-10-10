@@ -9,8 +9,21 @@
     ['sprites',          'resources/explode.png'],
     ['stars_background', 'resources/background_and_hud.png'],
     ['moon_hold',        'resources/moon_hold.png'],
-    ['planet_2',         'resources/planet2.png'],
-    ['planet_2_glow',    'resources/planet2_select.png']
+    ['planet_1',         'resources/planets/planet1.png'],
+    ['planet_1_glow',    'resources/planets/planet1_select.png'],
+    ['planet_2',         'resources/planets/planet2.png'],
+    ['planet_2_glow',    'resources/planets/planet2_select.png'],
+    ['planet_3',         'resources/planets/planet3.png'],
+    ['planet_3_glow',    'resources/planets/planet3_select.png'],
+    ['planet_4',         'resources/planets/planet4.png'],
+    ['planet_4_glow',    'resources/planets/planet4_select.png'],
+    ['planet_5',         'resources/planets/planet5.png'],
+    ['planet_5_glow',    'resources/planets/planet5_select.png'],
+    ['moon_1',           'resources/moons/moon1.png'],
+    ['moon_2',           'resources/moons/moon2.png'],
+    ['moon_3',           'resources/moons/moon3.png'],
+    ['moon_4',           'resources/moons/moon4.png'],
+    ['moon_5',           'resources/moons/moon5.png']
   ],
 
   addFont: [
@@ -73,20 +86,54 @@
       gapy:    0
     },
     {
-      id:      'planet_2',
-      image:   'planet_2',
-      tilew:   140, tileh:   140,
-      tilerow: 1,
-      gapx:    0,
-      gapy:    0
+      id: 'planet_1', image: 'planet_1',
+      tilew: 160, tileh: 160,
+      tilerow: 1, gapx: 0, gapy: 0
     },
     {
-      id:      'planet_2_glow',
-      image:   'planet_2_glow',
-      tilew:   140, tileh:   140,
-      tilerow: 1,
-      gapx:    0,
-      gapy:    0
+      id: 'planet_1_glow', image: 'planet_1_glow',
+      tilew: 160, tileh: 160,
+      tilerow: 1, gapx: 0, gapy: 0
+    },
+    {
+      id: 'planet_2', image: 'planet_2',
+      tilew: 140, tileh: 140,
+      tilerow: 1, gapx: 0, gapy: 0
+    },
+    {
+      id: 'planet_2_glow', image: 'planet_2_glow',
+      tilew: 140, tileh: 140,
+      tilerow: 1, gapx: 0, gapy: 0
+    },
+    {
+      id: 'planet_3', image: 'planet_3',
+      tilew: 150, tileh: 150,
+      tilerow: 1, gapx: 0, gapy: 0
+    },
+    {
+      id: 'planet_3_glow', image: 'planet_3_glow',
+      tilew: 150, tileh: 150,
+      tilerow: 1, gapx: 0, gapy: 0
+    },
+    {
+      id: 'planet_4', image: 'planet_4',
+      tilew: 150, tileh: 150,
+      tilerow: 1, gapx: 0, gapy: 0
+    },
+    {
+      id: 'planet_4_glow', image: 'planet_4_glow',
+      tilew: 150, tileh: 150,
+      tilerow: 1, gapx: 0, gapy: 0
+    },
+    {
+      id: 'planet_5', image: 'planet_5',
+      tilew: 150, tileh: 150,
+      tilerow: 1, gapx: 0, gapy: 0
+    },
+    {
+      id: 'planet_5_glow', image: 'planet_5_glow',
+      tilew: 150, tileh: 150,
+      tilerow: 1, gapx: 0, gapy: 0
     },
     {
       id:      'stars_background',
@@ -105,6 +152,31 @@
       tilerow: 1,
       gapx:    0,
       gapy:    0
+    },
+    {
+      id: 'moon_1', image: 'moon_1',
+      tilew: 30, tileh: 30,
+      tilerow: 1, gapx: 0, gapy: 0
+    },
+    {
+      id: 'moon_2', image: 'moon_2',
+      tilew: 30, tileh: 30,
+      tilerow: 1, gapx: 0, gapy: 0
+    },
+    {
+      id: 'moon_3', image: 'moon_3',
+      tilew: 30, tileh: 30,
+      tilerow: 1, gapx: 0, gapy: 0
+    },
+    {
+      id: 'moon_4', image: 'moon_4',
+      tilew: 30, tileh: 30,
+      tilerow: 1, gapx: 0, gapy: 0
+    },
+    {
+      id: 'moon_5', image: 'moon_5',
+      tilew: 30, tileh: 30,
+      tilerow: 1, gapx: 0, gapy: 0
     }
   ],
 
