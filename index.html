@@ -65,84 +65,100 @@ function setup() {
 
     timeStarted = (new Date()).getTime();
 
-    maingame.hud.setWidget('time_left', {
-      widget: 'label',
-      font:   'small',
-      value:  0,
-      dx:     gbox.getScreenW() - 40,
-      dy:     25,
-      clear:  true
-    });
-
-    maingame.hud.setWidget('mouse_pos', {
-      widget: 'label',
-      font:   'small',
-      value:  0,
-      dx:     gbox.getScreenW() - 160,
-      dy:     25,
-      clear:  true
-    });
-
     // new BasicBox({ x: 350, y: 40, height: 100, width: 100, color: 'rgb(100, 200, 200)' });
-    create_celestial_body({
-      x: 50, y: 150,
-      sound: 'moon_music_1'
-    });
-
     // create_celestial_body({
-    //   x: 200, y: 150,
-    //   sound: 'moon_music_drum_1'
+    //   x: 50, y: 150,
+    //   sound: 'moon_music_1'
     // });
-
-    create_celestial_body({
-      x: 350, y: 150,
-      sound: 'moon_music_pad_1'
-    });
-
-    create_celestial_body({
-      x: 350, y: 150,
-      sound: 'moon_music_pad_2'
-    });
-
-    create_celestial_body({
-      x: 350, y: 150,
-      sound: 'moon_music_pad_3'
-    });
-
+    // 
+    // // create_celestial_body({
+    // //   x: 200, y: 150,
+    // //   sound: 'moon_music_drum_1'
+    // // });
+    // 
     // create_celestial_body({
-    //   x: 450, y: 300,
-    //   sound: 'moon_music_percussion_1'
+    //   x: 350, y: 150,
+    //   sound: 'moon_music_pad_1'
     // });
-
-    create_celestial_body({
-      x: 450, y: 450,
-      sound: 'moon_music_percussion_2'
-    });
-
+    // 
+    // create_celestial_body({
+    //   x: 350, y: 150,
+    //   sound: 'moon_music_pad_2'
+    // });
+    // 
+    // create_celestial_body({
+    //   x: 350, y: 150,
+    //   sound: 'moon_music_pad_3'
+    // });
+    // 
+    // // create_celestial_body({
+    // //   x: 450, y: 300,
+    // //   sound: 'moon_music_percussion_1'
+    // // });
+    // 
+    // create_celestial_body({
+    //   x: 450, y: 450,
+    //   sound: 'moon_music_percussion_2'
+    // });
+    // 
+    // // create_celestial_body({
+    // //   x: 150, y: 100,
+    // //   sound: 'moon_music_synth_1'
+    // // });
+    // 
     // create_celestial_body({
     //   x: 150, y: 100,
-    //   sound: 'moon_music_synth_1'
+    //   sound: 'moon_music_bells_1'
+    // });
+    // 
+    // create_celestial_body({
+    //   x: 150, y: 100,
+    //   sound: 'moon_music_bells_2'
     // });
 
-    create_celestial_body({
-      x: 150, y: 100,
-      sound: 'moon_music_bells_1'
+    planetFactory.createPlanet({
+      parentId: 'null',
+      radius: 0,
+      speed: 0,
+      controllerName: 'playTrack',
+      sound: 'moon_music_percussion_1'
     });
 
-    create_celestial_body({
-      x: 150, y: 100,
-      sound: 'moon_music_bells_2'
+    planetFactory.createPlanet({
+      parentId:       'null',
+      radius:         0,
+      speed:          0,
+      controllerName: 'playTrack',
+      sound:          'moon_music_bells_2'
     });
 
-    playAll();
+    planetFactory.createPlanet({
+      parentId: 'planet-0',
+      radius: 120,
+      speed: 1,
+      controllerName: 'fullVolume'
+    });
 
-    planetFactory.createPlanet('null',              0,  0, 'playTrack');
-    planetFactory.createPlanet('null',              0,  0, 'playTrack');
-    planetFactory.createPlanet('planet-0',          120, 1, 'fullVolume');
-    planetFactory.createPlanet('planet-1',          80, 3, 'fullVolume');
-    planetFactory.createPlanet('planet-1',          100, 2, 'fullVolume');
-    planetFactory.createPlanet('planet-1',          120, 5, 'fullVolume');
-    planetFactory.createPlanet('planet-0-planet-0', 20, 6, 'lowerHalfVolume');
+    planetFactory.createPlanet({
+      parentId: 'planet-1',
+      radius: 80,
+      speed: 3,
+      controllerName: 'fullVolume'
+    });
+
+    // planetFactory.createPlanet('null',              0,   0,   'playTrack', 'moon_music_bells_2');
+    // planetFactory.createPlanet('planet-0',          120, 1,   'fullVolume');
+    // planetFactory.createPlanet('planet-1',          80,  3,   'fullVolume');
+
+    // planetFactory.createPlanet('planet-1',          100, 2,   'fullVolume');
+    // planetFactory.createPlanet('planet-1',          120, 5,   'fullVolume');
+    // planetFactory.createPlanet('planet-0-planet-0', 20,  6,   'lowerHalfVolume');
+    // planetFactory.createPlanet('null',              100, 100, 'playTrack', 'moon_music_bells_1');
+
+    // gbox.playAudio('moon_music_percussion_1b');
+    // gbox.playAudio('moon_music_percussion_1c');
+
+    // playAll();
   };
 
   gbox.go();
