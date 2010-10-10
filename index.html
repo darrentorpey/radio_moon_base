@@ -24,8 +24,6 @@
   <style>BODY { -webkit-user-select: none; margin: 0px }</style>
   <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
   <script>
-var planets = [];
-
 var maingame;
 var frameCount = 0;
 var timeStarted;     // This will record the current time when the game started
@@ -67,7 +65,8 @@ function setup() {
       parentId: 'null',
       radius:   100,
       speed:    100,
-      effect:   'moon_music_bells_1',
+      effect:   'playTrack',
+      sound:    'moon_music_bells_1',
     });
 
     planetFactory.createPlanet({

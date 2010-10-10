@@ -3,10 +3,30 @@ function addBackground() {
     id:       'stars_bckgnd',
     group:    'background',
     tileset:  'stars_background',
-    colh:     gbox.getTiles('stars_t').tileh,
 
     first: function() {
       toys.topview.initialize(this, {});
+
+      if (gbox.keyIsHit('left')) {
+        planetFactory.getPrevPlanet();
+      } else if (gbox.keyIsHit('right')) {
+        planetFactory.getNextPlanet();
+      }
+
+      if (gbox.keyIsHit('down')) {
+        volumeDownCurrent();
+      } else if (gbox.keyIsHit('up')) {
+        volumeUpCurrent();
+      }
+
+      if (gbox.keyIsHit('a')) {
+        g_currentPlanet
+      } else if (gbox.keyIsHit('b')) {
+        maingame.playerDied({ wait: 100 });
+      } else if (gbox.keyIsHit('c')) {
+        findNearestWorkplace(this).tip();
+        this.done_doing_work();
+      }
     },
 
     blit: function() {
@@ -24,4 +44,16 @@ function addBackground() {
       });
     }
   });
+}
+
+function volumeUpCurrent() {
+  if (g_currentPlanet) {
+    g_currentPlanet.raiseVolume();
+  }
+}
+
+function volumeDownCurrent() {
+  if (g_currentPlanet) {
+    g_currentPlanet.lowerVolume();
+  }
 }
