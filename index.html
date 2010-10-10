@@ -19,7 +19,7 @@
   <script type="text/javascript" src="lib/gbox_ext.js"></script>
   <script type="text/javascript" src="lib/sound.js"></script>
   <script type="text/javascript" src="parts/background.js"></script>
-  
+
   <link rel="stylesheet" href="resources/style.css">
   <style>BODY { -webkit-user-select: none; margin: 0px }</style>
   <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
@@ -70,7 +70,7 @@ function setup() {
     });
 
     planetFactory.createPlanet({
-      x: 300, y: 300,
+      x: 200, y: 400,
       parentId: 'null',
       radius:   0,
       speed:    0,
@@ -85,6 +85,24 @@ function setup() {
       speed:    0,
       effect:   'playTrack',
       sound:    'moon_music_bells_2'
+    });
+
+    planetFactory.createPlanet({
+      x: 500, y: 400,
+      parentId: 'null',
+      radius:   0,
+      speed:    0,
+      effect:   'playTrack',
+      sound:    'moon_music_pad_3'
+    });
+
+    planetFactory.createPlanet({
+      x: 800, y: 250,
+      parentId: 'null',
+      radius:   0,
+      speed:    0,
+      effect:   'playTrack',
+      sound:    'moon_music_drum_1'
     });
 
     planetFactory.createPlanet({
@@ -103,6 +121,20 @@ function setup() {
 
     planetFactory.createPlanet({
       parentId: 'planet-2',
+      radius:   100,
+      speed:    2,
+      effect:   'fullVolume'
+    });
+
+    planetFactory.createPlanet({
+      parentId: 'planet-3',
+      radius:   100,
+      speed:    2,
+      effect:   'fullVolume'
+    });
+
+    planetFactory.createPlanet({
+      parentId: 'planet-4',
       radius:   100,
       speed:    2,
       effect:   'fullVolume'
@@ -136,9 +168,9 @@ function introScreenAnimation(reset) {
   // if (reset) {
   //   toys.resetToy(this, 'rising');
   // }
-  // 
+  //
   // gbox.blitFade(gbox.getBufferContext(), { alpha: 1 });
-  // 
+  //
   // toys.logos.linear(this, 'rising', {
   //   image: 'logo',
   //   sx:    gbox.getScreenW()/2 - gbox.getImage('logo').width/2,
