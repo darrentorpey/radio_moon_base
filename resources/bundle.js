@@ -9,7 +9,8 @@
     ['sprites',          'resources/explode.png'],
     ['stars_background', 'resources/background_and_hud.png'],
     ['moon_hold',        'resources/moon_hold.png'],
-    ['planet_hold_1',    'resources/planethold1.png']
+    ['planet_2',         'resources/planet2.png'],
+    ['planet_2_glow',    'resources/planet2_select.png']
   ],
 
   addFont: [
@@ -72,10 +73,18 @@
       gapy:    0
     },
     {
-      id:      'planet_hold_one',
-      image:   'planet_hold_1',
-      tilew:   170, tileh:   170,
-      tilerow: 4,
+      id:      'planet_2',
+      image:   'planet_2',
+      tilew:   140, tileh:   140,
+      tilerow: 1,
+      gapx:    0,
+      gapy:    0
+    },
+    {
+      id:      'planet_2_glow',
+      image:   'planet_2_glow',
+      tilew:   140, tileh:   140,
+      tilerow: 1,
       gapx:    0,
       gapy:    0
     },
@@ -104,8 +113,6 @@
     ['moon_music_1',            ['resources/music/synth_line.ogg'],   { channel: 'bgmusic', loop: true }],
     ['moon_music_drum_1',       ['resources/music/Drums.ogg'],        { channel: 'bgmusic', loop: true }],
     ['moon_music_percussion_1', ['resources/music/Percussion_1.ogg'], { channel: 'bgmusic', loop: true }],
-    ['moon_music_percussion_1b', ['resources/music/Percussion_1.ogg'], { channel: 'bgmusic', loop: true }],
-    ['moon_music_percussion_1c', ['resources/music/Percussion_1.ogg'], { channel: 'bgmusic', loop: true }],
     ['moon_music_percussion_2', ['resources/music/Percussion_2.ogg'], { channel: 'bgmusic', loop: true }],
     ['moon_music_synth_1',      ['resources/music/Synth.ogg'],        { channel: 'bgmusic', loop: true }],
     ['moon_music_pad_1',        ['resources/music/Pad_1.ogg'],        { channel: 'bgmusic', loop: true }],

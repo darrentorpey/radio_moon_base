@@ -13,7 +13,6 @@
   <script type="text/javascript" src="lib/core/object.js"></script>
   <script type="text/javascript" src="lib/actors/basic_box.js"></script>
   <script type="text/javascript" src="lib/actors/celestial_body.js"></script>
-  <script type="text/javascript" src="lib/actors/moon.js"></script>
   <script type="text/javascript" src="lib/mouse.js"></script>
   <script type="text/javascript" src="lib/planet.js"></script>
   <script type="text/javascript" src="lib/darrens_helpers.js"></script>
@@ -61,104 +60,70 @@ function setup() {
 
     addMouseControl();
 
-    // addMoon();
-
     timeStarted = (new Date()).getTime();
 
-    // new BasicBox({ x: 350, y: 40, height: 100, width: 100, color: 'rgb(100, 200, 200)' });
-    // create_celestial_body({
-    //   x: 50, y: 150,
-    //   sound: 'moon_music_1'
-    // });
-    // 
-    // // create_celestial_body({
-    // //   x: 200, y: 150,
-    // //   sound: 'moon_music_drum_1'
-    // // });
-    // 
-    // create_celestial_body({
-    //   x: 350, y: 150,
-    //   sound: 'moon_music_pad_1'
-    // });
-    // 
-    // create_celestial_body({
-    //   x: 350, y: 150,
-    //   sound: 'moon_music_pad_2'
-    // });
-    // 
-    // create_celestial_body({
-    //   x: 350, y: 150,
-    //   sound: 'moon_music_pad_3'
-    // });
-    // 
-    // // create_celestial_body({
-    // //   x: 450, y: 300,
-    // //   sound: 'moon_music_percussion_1'
-    // // });
-    // 
-    // create_celestial_body({
-    //   x: 450, y: 450,
-    //   sound: 'moon_music_percussion_2'
-    // });
-    // 
-    // // create_celestial_body({
-    // //   x: 150, y: 100,
-    // //   sound: 'moon_music_synth_1'
-    // // });
-    // 
-    // create_celestial_body({
-    //   x: 150, y: 100,
-    //   sound: 'moon_music_bells_1'
-    // });
-    // 
-    // create_celestial_body({
-    //   x: 150, y: 100,
-    //   sound: 'moon_music_bells_2'
-    // });
-
     planetFactory.createPlanet({
+      x: 100, y: 100,
       parentId: 'null',
-      radius: 0,
-      speed: 0,
-      controllerName: 'playTrack',
-      sound: 'moon_music_percussion_1'
+      radius:   100,
+      speed:    100,
+      effect:   'moon_music_bells_1',
     });
 
     planetFactory.createPlanet({
-      parentId:       'null',
-      radius:         0,
-      speed:          0,
-      controllerName: 'playTrack',
-      sound:          'moon_music_bells_2'
+      x: 300, y: 300,
+      parentId: 'null',
+      radius:   0,
+      speed:    0,
+      effect:   'playTrack',
+      sound:    'moon_music_percussion_1'
+    });
+
+    planetFactory.createPlanet({
+      x: 600, y: 100,
+      parentId: 'null',
+      radius:   0,
+      speed:    0,
+      effect:   'playTrack',
+      sound:    'moon_music_bells_2'
     });
 
     planetFactory.createPlanet({
       parentId: 'planet-0',
-      radius: 120,
-      speed: 1,
-      controllerName: 'fullVolume'
+      radius:   120,
+      speed:    1,
+      effect:   'fullVolume'
     });
 
     planetFactory.createPlanet({
       parentId: 'planet-1',
-      radius: 80,
-      speed: 3,
-      controllerName: 'fullVolume'
+      radius:   80,
+      speed:    3,
+      effect:   'fullVolume'
     });
 
-    // planetFactory.createPlanet('null',              0,   0,   'playTrack', 'moon_music_bells_2');
-    // planetFactory.createPlanet('planet-0',          120, 1,   'fullVolume');
-    // planetFactory.createPlanet('planet-1',          80,  3,   'fullVolume');
+    planetFactory.createPlanet({
+      parentId: 'planet-1',
+      radius:   100,
+      speed:    2,
+      effect:   'fullVolume'
+    });
 
-    // planetFactory.createPlanet('planet-1',          100, 2,   'fullVolume');
-    // planetFactory.createPlanet('planet-1',          120, 5,   'fullVolume');
-    // planetFactory.createPlanet('planet-0-planet-0', 20,  6,   'lowerHalfVolume');
-    // planetFactory.createPlanet('null',              100, 100, 'playTrack', 'moon_music_bells_1');
+    planetFactory.createPlanet({
+      parentId: 'planet-1',
+      radius:   120,
+      speed:    5,
+      effect:   'fullVolume'
+    });
 
-    // gbox.playAudio('moon_music_percussion_1b');
-    // gbox.playAudio('moon_music_percussion_1c');
+    planetFactory.createPlanet({
+      parentId: 'planet-0-planet-0',
+      radius:   20,
+      speed:    6,
+      effect:   'lowerHalfVolume'
+    });
 
-    // playAll();
+    playAll();
   };
 
   gbox.go();
