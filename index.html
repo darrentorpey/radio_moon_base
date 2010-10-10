@@ -53,10 +53,11 @@ function setup() {
 
   maingame.gameMenu = function() { return true; };
   maingame.gameIntroAnimation = function() { return true; };
-  // maingame.gameTitleIntroAnimation = introScreenAnimation;
-  maingame.gameTitleIntroAnimation = function() {}
+  maingame.gameTitleIntroAnimation = introScreenAnimation;
+  // maingame.gameTitleIntroAnimation = function() {}
   maingame.changeLevel = function() {
     // gbox.clearGroup('game');
+    title_screen_alpha = 0.0001;
   }
   // maingame.endlevelIntroAnimation = function() {
   //   console.log("enddd");

@@ -1,4 +1,5 @@
 var title_screen;
+var title_screen_alpha = 1.0;
 
 function introScreenAnimation(reset) {
   gbox.blitFade(gbox.getBufferContext(), { alpha: 1 });
@@ -7,8 +8,6 @@ function introScreenAnimation(reset) {
     id:            'title_screen',
     group:         'game',
     tileset:       'title_screen',
-    alpha: 1.0,
-    cleared: false,
 
     initialize: function() {
       toys.topview.initialize(this, { x: 0, y: 0 });
@@ -23,7 +22,7 @@ function introScreenAnimation(reset) {
         fliph:   this.fliph,
         flipv:   this.flipv,
         camera:  this.camera,
-        alpha:   0.1
+        alpha:   title_screen_alpha
       });
     }
   }
