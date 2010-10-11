@@ -69,8 +69,9 @@ function setup() {
 
     timeStarted = (new Date()).getTime();
 
+    // Blueby
     planetFactory.createPlanet({
-      x: 140, y: 140,
+      x: 280, y: 140,
       parentId: 'null',
       radius:   100,
       speed:    100,
@@ -78,8 +79,9 @@ function setup() {
       sound:    'moon_music_bells_1',
     });
 
+    // Snow-cap
     planetFactory.createPlanet({
-      x: 200, y: 400,
+      x: 150, y: 450,
       parentId: 'null',
       radius:   0,
       speed:    0,
@@ -87,8 +89,9 @@ function setup() {
       sound:    'moon_music_percussion_1'
     });
 
+    // Earth
     planetFactory.createPlanet({
-      x: 600, y: 100,
+      x: 630, y: 60,
       parentId: 'null',
       radius:   0,
       speed:    0,
@@ -96,8 +99,9 @@ function setup() {
       sound:    'moon_music_bells_2'
     });
 
+    // Yellow dude
     planetFactory.createPlanet({
-      x: 500, y: 400,
+      x: 580, y: 450,
       parentId: 'null',
       radius:   0,
       speed:    0,
@@ -106,7 +110,7 @@ function setup() {
     });
 
     planetFactory.createPlanet({
-      x: 10, y: 10,
+      x: 50, y: 50,
       parentId: 'null',
       radius:   0,
       speed:    0,
@@ -114,8 +118,9 @@ function setup() {
       sound:    'echoes'
     });
 
+    // Moon
     planetFactory.createPlanet({
-      x: 250, y: 250,
+      x: 370, y: 400,
       parentId: 'null',
       radius:   0,
       speed:    0,
@@ -134,7 +139,7 @@ function setup() {
 
     planetFactory.createPlanet({
       parentId: 'planet-0',
-      radius:   120,
+      radius:   100,
       speed:    1,
       effect:   'fullVolume'
     });
@@ -164,6 +169,20 @@ function setup() {
       parentId: 'planet-4',
       radius:   100,
       speed:    2,
+      effect:   'fullVolume'
+    });
+
+    planetFactory.createPlanet({
+      parentId: 'planet-5',
+      radius:   90,
+      speed:    1,
+      effect:   'fullVolume'
+    });
+
+    planetFactory.createPlanet({
+      parentId: 'planet-6',
+      radius:   90,
+      speed:    1,
       effect:   'fullVolume'
     });
 
